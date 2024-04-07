@@ -18,11 +18,7 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb)))
     rgb(var(--background-start-rgb));
 }
 
@@ -31,3 +27,18 @@ body {
     text-wrap: balance;
   }
 }
+
+.clip-bottom-right {
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 75% 100%, 0 100%);
+}
+
+/* 
+Colors in Palette
+Color	Hex	RGB
+#000000	(0,0,0)
+#c5003c	(197,0,60)
+#880425	(136,4,37)
+#f3e600	(243,230,0)
+#55ead4	(85,234,212) */
+
+/* https://codepen.io/dspstudio/pen/dygMZjN */
