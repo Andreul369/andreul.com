@@ -1,10 +1,12 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { GeistSans } from 'geist/font/sans';
+// import { GeistMono } from 'geist/font/mono';
+
 import './globals.css';
 import NavBar from '@/components/nav';
 import Footer from '@/components/footer';
-
-const inter = Inter({ subsets: ['latin'] });
+import { ThemeProvider } from '@/components/theme-provider';
+import { TailwindIndicator } from '@/components/tailwind-indicator';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -17,12 +19,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
-      <body className={inter.className}>
+    <html lang='en' className={GeistSans.className}>
+      <body>
+        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <main className='flex min-h-screen flex-col items-center justify-between'>
+            {children}
+          </main>
+          <TailwindIndicator />
+        </ThemeProvider>
         <NavBar />
-        <main className='flex min-h-screen flex-col items-center justify-between'>
-          {children}
-        </main>
+
         <Footer />
       </body>
     </html>
