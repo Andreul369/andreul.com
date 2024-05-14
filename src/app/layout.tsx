@@ -22,14 +22,13 @@ export default function RootLayout({
     <html lang='en' className={GeistSans.className}>
       <body>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+          <NavBar />
           <main className='flex min-h-screen flex-col items-center justify-between'>
             {children}
           </main>
+          <Footer />
           <TailwindIndicator />
         </ThemeProvider>
-        <NavBar />
-
-        <Footer />
       </body>
     </html>
   );

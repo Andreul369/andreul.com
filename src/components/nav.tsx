@@ -1,7 +1,11 @@
 import React from 'react';
 
 const NavBar = () => {
-  return <nav>NavBar</nav>;
+  return (
+    <nav>
+      <p>{`<andreul />`}</p>
+    </nav>
+  );
 };
 
 export default NavBar;
