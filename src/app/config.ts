@@ -10,18 +10,18 @@ export const siteConfig = {
 export const navItems = [
   {
     href: '#',
-    title: 'Overview',
+    title: 'Home',
   },
   {
     href: '#',
-    title: 'Pricing',
+    title: 'Work',
   },
   {
     href: '#',
-    title: 'Products',
+    title: 'Testimonials',
   },
   {
     href: '#',
-    title: 'Settings',
+    title: 'Contact',
   },
 ] satisfies { href: Route; title: string }[];
