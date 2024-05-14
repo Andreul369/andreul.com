@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { GeistSans } from 'geist/font/sans';
+
 // import { GeistMono } from 'geist/font/mono';
 import './globals.css';
 
-import NavBar from '@/components/nav';
 import Footer from '@/components/footer';
-import { ThemeProvider } from '@/components/theme-provider';
+import NavBar from '@/components/nav';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
+import { ThemeProvider } from '@/components/theme-provider';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -19,14 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en' className={GeistSans.className}>
-      <body>
-        <ThemeProvider attribute='class' defaultTheme='system' enableSystem>
-          <NavBar />
-          <main className='flex min-h-screen flex-col items-center justify-between'>
-            {children}
-          </main>
-          <Footer />
+    <html lang="en" className={GeistSans.className}>
+      <body className="min-h-screen antialiased">
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <div className="relative px-4 ">
+            <NavBar />
+            <main className="flex min-h-screen flex-col items-center justify-between pt-16">
+              {children}
+            </main>
+            <Footer />
+          </div>
           <TailwindIndicator />
         </ThemeProvider>
       </body>

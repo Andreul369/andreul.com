@@ -1,13 +1,13 @@
 import React from 'react';
+import Link from 'next/link';
 
 import { navItems } from '@/app/config';
-import Link from 'next/link';
 
 const NavBar = () => {
   return (
-    <div className='flex'>
-      <p>{`<andreul />`}</p>
-      <nav className='flex gap-2 h-16 border-b'>
+    <div className="fixed flex items-center justify-between gap-2 border-b">
+      <p className="text-2xl">{`<andreul />`}</p>
+      <nav className="flex h-16 items-center gap-2">
         {navItems.map((item, idx) => (
           <Link href={item.href} key={`${item.href}-${idx}`}>
             {item.title}
