@@ -5,7 +5,7 @@ import { navItems } from '@/app/config';
 
 const NavBar = () => {
   return (
-    <div className="fixed flex items-center justify-between gap-2 border-b">
+    <div className="flex items-center justify-between gap-2 border-b">
       <p className="text-2xl">{`<andreul />`}</p>
       <nav className="flex h-16 items-center gap-2">
         {navItems.map((item, idx) => (

@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.className}>
       <body className="min-h-screen antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="relative px-4 ">
+          <div className="relative flex flex-col px-4">
             <NavBar />
             <main className="flex min-h-screen flex-col items-center justify-between pt-16">
               {children}
