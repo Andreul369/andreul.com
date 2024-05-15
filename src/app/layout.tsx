@@ -25,7 +25,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative flex flex-col px-4">
             <NavBar />
-            <main className="flex min-h-screen flex-col items-center justify-between pt-16">
+            <main className="flex min-h-screen flex-col items-center justify-between pt-14">
               {children}
             </main>
             <Footer />
