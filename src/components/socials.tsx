@@ -1,22 +1,31 @@
 import React from 'react';
+import Link from 'next/link';
 
 import * as Icons from '@/components/icons';
-import { Button, Card, CardContent, CardHeader, CardTitle } from './ui';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 
 const Socials = () => {
   return (
-    <section>
+    <section id="socials">
       <Card>
         <CardHeader>
           <CardTitle>Find me on</CardTitle>
         </CardHeader>
         <CardContent className="flex gap-4">
-          <Button variant="outline" className="size-16 p-4">
+          <Link
+            href="https://github.com/Andreul369"
+            target="_blank"
+            className="size-16 rounded-sm border p-4"
+          >
             <Icons.GitHub className="size-8" />
-          </Button>
-          <Button variant="outline" className="size-16 p-4">
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/andrei-bojor-0207b1210/"
+            target="_blank"
+            className="size-16 rounded-sm border p-4"
+          >
             <Icons.LinkedIn className="size-8" />
-          </Button>
+          </Link>
         </CardContent>
       </Card>
     </section>

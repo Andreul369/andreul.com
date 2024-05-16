@@ -1,27 +1,20 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import * as Icons from '@/components/icons';
 import {
-  Button,
   Card,
   CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
-  Input,
-  Label,
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
 } from '@/components/ui';
 
 const Projects = () => {
   return (
-    <section className="flex w-full flex-col gap-4">
+    <section id="projects" className="flex w-full flex-col gap-4">
       <Card>
         <CardHeader>
           <CardTitle>DevFlow</CardTitle>
@@ -31,14 +24,22 @@ const Projects = () => {
           <Image src="/project-1.png" alt="project1" objectFit="cover" fill />
         </CardContent>
         <CardFooter className="flex justify-end gap-2 pt-6">
-          <Button variant="outline">
+          <Link
+            href="https://dev-flow-self.vercel.app"
+            target="_blank"
+            className="flex items-center rounded-sm border border-input bg-background px-4 py-2 hover:bg-accent hover:text-accent-foreground"
+          >
             <Icons.LaptopMinimal className="mr-2 size-4" />
             Demo
-          </Button>
-          <Button variant="outline">
+          </Link>
+          <Link
+            href="https://github.com/Andreul369/DevFlow"
+            target="_blank"
+            className="flex items-center rounded-sm border border-input bg-background px-4 py-2 hover:bg-accent hover:text-accent-foreground"
+          >
             <Icons.GitHub className="mr-2 size-4" />
-            Github
-          </Button>
+            <span>Github</span>
+          </Link>
         </CardFooter>
       </Card>
     </section>

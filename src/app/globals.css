@@ -48,3 +48,20 @@
     --ring: 240 4.9% 83.9%;
   }
 }
+
+@layer base {
+  * {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings:
+      'rlig' 1,
+      'calt' 1;
+  }
+
+  .container {
+    @apply max-sm:px-4;
+  }
+}

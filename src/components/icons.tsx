@@ -59,6 +59,7 @@ export const PlusCircle = Lucide.PlusCircle;
 export const Plus = Lucide.Plus;
 export const Post = Lucide.FileText;
 export const Search = Lucide.Search;
+export const SendHorizontal = Lucide.SendHorizonal;
 export const Settings = Lucide.Settings;
 export const ShoppingCart = Lucide.ShoppingCart;
 export const Smile = Lucide.Smile;
