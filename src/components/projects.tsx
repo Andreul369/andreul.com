@@ -19,7 +19,7 @@ import {
   SelectValue,
 } from '@/components/ui';
 
-const Work = () => {
+const Projects = () => {
   return (
     <section className="flex w-full flex-col gap-4">
       <Card>
@@ -45,4 +45,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Projects;

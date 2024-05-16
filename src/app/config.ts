@@ -10,7 +10,7 @@ export const siteConfig = {
 export const navItems = [
   {
     href: '#',
-    title: 'Work',
+    title: 'Projects',
   },
   {
     href: '#',
