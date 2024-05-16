@@ -21,7 +21,7 @@ const ThemeToggle = dynamic(() => import('@/components/theme-toggle'), {
 
 const Footer = () => {
   return (
-    <footer className="flex h-14 items-center justify-between border-t">
+    <footer className="flex h-16 w-full max-w-6xl items-center justify-between border-t">
       <h1>Footer</h1>
       <ThemeToggle />
     </footer>
