@@ -53,19 +53,49 @@ const Contact = () => {
   }
 
   return (
-    <Form {...form}>
-      <form
-        onSubmit={form.handleSubmit(onSubmit)}
-        className=" grid w-full space-y-8"
-      >
-        <div className="flex justify-between gap-4">
+    <section id="contact" className="w-full">
+      <Form {...form}>
+        <form
+          onSubmit={form.handleSubmit(onSubmit)}
+          className="grid w-full space-y-8"
+        >
+          <div className="flex justify-between gap-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl>
+                    <Input placeholder="Name" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem className="w-full">
+                  <FormControl>
+                    <Input placeholder="Email" {...field} />
+                  </FormControl>
+
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
+
           <FormField
             control={form.control}
-            name="name"
+            name="subject"
             render={({ field }) => (
-              <FormItem className="w-full">
+              <FormItem>
                 <FormControl>
-                  <Input placeholder="Name" {...field} />
+                  <Input placeholder="Subject" {...field} />
                 </FormControl>
 
                 <FormMessage />
@@ -75,62 +105,37 @@ const Contact = () => {
 
           <FormField
             control={form.control}
-            name="email"
+            name="message"
             render={({ field }) => (
-              <FormItem className="w-full">
+              <FormItem>
                 <FormControl>
-                  <Input placeholder="Email" {...field} />
+                  <Textarea
+                    placeholder="Write your message here..."
+                    {...field}
+                  />
                 </FormControl>
 
                 <FormMessage />
               </FormItem>
             )}
           />
-        </div>
 
-        <FormField
-          control={form.control}
-          name="subject"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Subject" {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <FormField
-          control={form.control}
-          name="message"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Textarea placeholder="Write your message here..." {...field} />
-              </FormControl>
-
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-
-        <Button type="submit" disabled={isSubmitting}>
-          {isSubmitting ? (
-            <>
-              <p>Sending...</p>
-              <Icons.Spinner className="ml-2 size-4 animate-spin" />
-            </>
-          ) : (
-            <>
-              <p>Send it</p>
-              <Icons.SendHorizontal className="ml-2 size-4" />
-            </>
-          )}
-        </Button>
-      </form>
-    </Form>
+          <Button type="submit" disabled={isSubmitting}>
+            {isSubmitting ? (
+              <>
+                <p>Sending...</p>
+                <Icons.Spinner className="ml-2 size-4 animate-spin" />
+              </>
+            ) : (
+              <>
+                <p>Send it</p>
+                <Icons.SendHorizontal className="ml-2 size-4" />
+              </>
+            )}
+          </Button>
+        </form>
+      </Form>
+    </section>
   );
 };
 
