@@ -18,7 +18,10 @@ const Projects = () => {
       <Card>
         <CardHeader>
           <CardTitle>DevFlow</CardTitle>
-          <CardDescription>A platform like StackOverflow</CardDescription>
+          <CardDescription>
+            A platform like StackOverflow. Deci imaginea siteului cu background
+            gradient paralax intr-un card.
+          </CardDescription>
         </CardHeader>
         <CardContent className="relative h-96 rounded-lg">
           <Image src="/project-1.png" alt="project1" objectFit="cover" fill />

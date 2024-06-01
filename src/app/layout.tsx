@@ -5,6 +5,7 @@ import { GeistSans } from 'geist/font/sans';
 import './globals.css';
 
 import Footer from '@/components/footer';
+import MobileNav from '@/components/mobile-nav';
 import NavBar from '@/components/nav';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -25,6 +26,9 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative flex flex-col items-center justify-center">
             <NavBar />
+
+            <MobileNav />
+
             <main className="flex min-h-screen max-w-6xl flex-col items-center justify-center pt-14">
               {children}
             </main>

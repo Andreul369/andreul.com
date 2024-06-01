@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-// import { toast } from 'sonner';
+import { toast } from 'sonner';
 import * as z from 'zod';
 
 import * as Icons from '@/components/icons';
@@ -43,9 +43,10 @@ const Contact = () => {
 
     try {
       const { name, subject, email } = values;
+      toast.success('Message sent. Thank you!');
     } catch (error) {
       console.error('Caught error:', error);
-      // toast.error(`${error}`);
+      toast.error(`${error}`);
     } finally {
       setIsSubmitting(false);
     }
@@ -57,33 +58,35 @@ const Contact = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className=" grid w-full space-y-8"
       >
-        <FormField
-          control={form.control}
-          name="name"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Name" {...field} />
-              </FormControl>
+        <div className="flex justify-between gap-4">
+          <FormField
+            control={form.control}
+            name="name"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <Input placeholder="Name" {...field} />
+                </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
 
-        <FormField
-          control={form.control}
-          name="email"
-          render={({ field }) => (
-            <FormItem>
-              <FormControl>
-                <Input placeholder="Email" {...field} />
-              </FormControl>
+          <FormField
+            control={form.control}
+            name="email"
+            render={({ field }) => (
+              <FormItem className="w-full">
+                <FormControl>
+                  <Input placeholder="Email" {...field} />
+                </FormControl>
 
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+        </div>
 
         <FormField
           control={form.control}
@@ -105,7 +108,7 @@ const Contact = () => {
           render={({ field }) => (
             <FormItem>
               <FormControl>
-                <Textarea placeholder="Enter your message here" {...field} />
+                <Textarea placeholder="Write your message here..." {...field} />
               </FormControl>
 
               <FormMessage />
@@ -114,11 +117,16 @@ const Contact = () => {
         />
 
         <Button type="submit" disabled={isSubmitting}>
-          Send
           {isSubmitting ? (
-            <Icons.Spinner className="ml-2 size-4 animate-spin" />
+            <>
+              <p>Sending...</p>
+              <Icons.Spinner className="ml-2 size-4 animate-spin" />
+            </>
           ) : (
-            <Icons.SendHorizontal className="ml-2 size-4" />
+            <>
+              <p>Send it</p>
+              <Icons.SendHorizontal className="ml-2 size-4" />
+            </>
           )}
         </Button>
       </form>
