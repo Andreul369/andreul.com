@@ -14,8 +14,8 @@ import {
 
 const Projects = () => {
   return (
-    <section id="projects" className="flex w-full flex-col gap-4">
-      <Card>
+    <section id="projects" className="flex w-full gap-4 pt-4">
+      <Card className="w-1/2 flex-grow backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <CardHeader>
           <CardTitle>DevFlow</CardTitle>
           <CardDescription>
@@ -23,9 +23,7 @@ const Projects = () => {
             gradient paralax intr-un card.
           </CardDescription>
         </CardHeader>
-        <CardContent className="relative h-96 rounded-lg">
-          <Image src="/project-1.png" alt="project1" objectFit="cover" fill />
-        </CardContent>
+        <CardContent>ASDASDASDS</CardContent>
         <CardFooter className="flex justify-end gap-2 pt-6">
           <Link
             href="https://dev-flow-self.vercel.app"
@@ -44,6 +42,17 @@ const Projects = () => {
             <span>Github</span>
           </Link>
         </CardFooter>
+      </Card>
+      <Card className="w-1/2 flex-grow backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <CardContent className="relative h-96 rounded-lg">
+          <Image
+            src="/project-1.png"
+            alt="project1"
+            objectFit="cover"
+            fill
+            className="rounded-md"
+          />
+        </CardContent>
       </Card>
     </section>
   );

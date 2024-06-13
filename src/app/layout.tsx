@@ -29,7 +29,7 @@ export default function RootLayout({
 
             <MobileNav />
 
-            <main className="flex min-h-screen max-w-6xl flex-col items-center justify-center pt-14">
+            <main className="flex min-h-screen max-w-7xl flex-col items-center justify-center pt-14">
               {children}
             </main>
             <Footer />

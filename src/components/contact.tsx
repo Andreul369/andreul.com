@@ -10,6 +10,10 @@ import * as z from 'zod';
 import * as Icons from '@/components/icons';
 import {
   Button,
+  Card,
+  CardContent,
+  CardHeader,
+  CardTitle,
   Form,
   FormControl,
   FormField,
@@ -53,89 +57,98 @@ const Contact = () => {
   }
 
   return (
-    <section id="contact" className="w-full">
-      <Form {...form}>
-        <form
-          onSubmit={form.handleSubmit(onSubmit)}
-          className="grid w-full space-y-8"
-        >
-          <div className="flex justify-between gap-4">
-            <FormField
-              control={form.control}
-              name="name"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl>
-                    <Input placeholder="Name" {...field} />
-                  </FormControl>
+    <>
+      <Card className="w-3/5 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <CardHeader>
+          <CardTitle>Contact</CardTitle>
+        </CardHeader>
+        <CardContent>
+          <section id="contact" className="w-full">
+            <Form {...form}>
+              <form
+                onSubmit={form.handleSubmit(onSubmit)}
+                className="grid w-full space-y-8"
+              >
+                <div className="flex justify-between gap-4">
+                  <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input placeholder="Name" {...field} />
+                        </FormControl>
 
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem className="w-full">
-                  <FormControl>
-                    <Input placeholder="Email" {...field} />
-                  </FormControl>
-
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-          </div>
-
-          <FormField
-            control={form.control}
-            name="subject"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Input placeholder="Subject" {...field} />
-                </FormControl>
-
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-
-          <FormField
-            control={form.control}
-            name="message"
-            render={({ field }) => (
-              <FormItem>
-                <FormControl>
-                  <Textarea
-                    placeholder="Write your message here..."
-                    {...field}
+                        <FormMessage />
+                      </FormItem>
+                    )}
                   />
-                </FormControl>
 
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem className="w-full">
+                        <FormControl>
+                          <Input placeholder="Email" {...field} />
+                        </FormControl>
 
-          <Button type="submit" disabled={isSubmitting}>
-            {isSubmitting ? (
-              <>
-                <p>Sending...</p>
-                <Icons.Spinner className="ml-2 size-4 animate-spin" />
-              </>
-            ) : (
-              <>
-                <p>Send it</p>
-                <Icons.SendHorizontal className="ml-2 size-4" />
-              </>
-            )}
-          </Button>
-        </form>
-      </Form>
-    </section>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                </div>
+
+                <FormField
+                  control={form.control}
+                  name="subject"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Input placeholder="Subject" {...field} />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Write your message here..."
+                          {...field}
+                        />
+                      </FormControl>
+
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+
+                <Button type="submit" disabled={isSubmitting}>
+                  {isSubmitting ? (
+                    <>
+                      <p>Sending...</p>
+                      <Icons.Spinner className="ml-2 size-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      <p>Send it</p>
+                      <Icons.SendHorizontal className="ml-2 size-4" />
+                    </>
+                  )}
+                </Button>
+              </form>
+            </Form>
+          </section>
+        </CardContent>
+      </Card>
+    </>
   );
 };
 

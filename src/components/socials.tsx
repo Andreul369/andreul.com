@@ -3,11 +3,12 @@ import Link from 'next/link';
 
 import * as Icons from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
+import { cn } from '@/utils/cn';
 
 const Socials = () => {
   return (
     <section id="socials">
-      <Card>
+      <Card className="backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <CardHeader>
           <CardTitle>Find me on</CardTitle>
         </CardHeader>
