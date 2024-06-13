@@ -15,7 +15,7 @@ import {
 const Projects = () => {
   return (
     <section id="projects" className="flex w-full gap-4 pt-4">
-      <Card className="w-1/2 flex-grow backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      <Card className="flex w-1/2 flex-grow flex-col justify-between backdrop-blur supports-[backdrop-filter]:bg-background/70">
         <CardHeader>
           <CardTitle>DevFlow</CardTitle>
           <CardDescription>
@@ -23,7 +23,40 @@ const Projects = () => {
             gradient paralax intr-un card.
           </CardDescription>
         </CardHeader>
-        <CardContent>ASDASDASDS</CardContent>
+
+        <CardContent>
+          <p>
+            in loc de light dark ar putea sa fie ice fire si pe ice(light) sa
+            fie albastrul deschis de la cyberpunk si pe dark sa fie cu rosu
+            cyberpunk
+          </p>
+          <p>
+            in loc de light dark ar putea sa fie ice fire si pe ice(light) sa
+            fie albastrul deschis de la cyberpunk si pe dark sa fie cu rosu
+            cyberpunk
+          </p>
+          <p>
+            in loc de light dark ar putea sa fie ice fire si pe ice(light) sa
+            fie albastrul deschis de la cyberpunk si pe dark sa fie cu rosu
+            cyberpunk
+          </p>
+          <p>
+            in loc de light dark ar putea sa fie ice fire si pe ice(light) sa
+            fie albastrul deschis de la cyberpunk si pe dark sa fie cu rosu
+            cyberpunk
+          </p>
+          <p>
+            in loc de light dark ar putea sa fie ice fire si pe ice(light) sa
+            fie albastrul deschis de la cyberpunk si pe dark sa fie cu rosu
+            cyberpunk
+          </p>
+          <p>
+            in loc de light dark ar putea sa fie ice fire si pe ice(light) sa
+            fie albastrul deschis de la cyberpunk si pe dark sa fie cu rosu
+            cyberpunk
+          </p>
+        </CardContent>
+
         <CardFooter className="flex justify-end gap-2 pt-6">
           <Link
             href="https://dev-flow-self.vercel.app"
@@ -43,8 +76,9 @@ const Projects = () => {
           </Link>
         </CardFooter>
       </Card>
+
       <Card className="w-1/2 flex-grow backdrop-blur supports-[backdrop-filter]:bg-background/70">
-        <CardContent className="relative h-96 rounded-lg">
+        <CardContent className="relative h-full rounded-lg">
           <Image
             src="/project-1.png"
             alt="project1"

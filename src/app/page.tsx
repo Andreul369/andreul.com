@@ -36,12 +36,12 @@ export default function Home() {
       <Projects />
 
       <div className="flex w-full gap-4 pt-4">
-        <Card className=" w-2/5 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+        <Card className="flex w-2/5 flex-grow flex-col backdrop-blur supports-[backdrop-filter]:bg-background/70">
           <CardHeader>
             <CardTitle>Skills</CardTitle>
           </CardHeader>
-          <CardContent className="flex flex-col justify-between">
-            <div className="flex flex-grow items-center justify-between">
+          <CardContent className="flex h-full flex-col justify-between">
+            <div className="flex w-full flex-grow items-center justify-between">
               <Icons.Nextjs className="size-14" />
               <Icons.React className="size-14" />
               <Icons.Tailwind className="size-14" />
