@@ -103,6 +103,7 @@ const Projects = () => {
                   <Image
                     src="/project-1.png"
                     alt="project1"
+                    objectFit="cover"
                     fill
                     className="rounded-md"
                   />

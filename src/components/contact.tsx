@@ -58,7 +58,7 @@ const Contact = () => {
 
   return (
     <>
-      <Card className="w-3/5 backdrop-blur supports-[backdrop-filter]:bg-background/70">
+      <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/70 md:w-3/5">
         <CardHeader>
           <CardTitle>Contact</CardTitle>
         </CardHeader>
