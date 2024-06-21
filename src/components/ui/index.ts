@@ -10,6 +10,15 @@ export {
 } from './card';
 
 export {
+  type CarouselApi,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselPrevious,
+  CarouselNext,
+} from './carousel';
+
+export {
   DropdownMenu,
   DropdownMenuCheckboxItem,
   DropdownMenuContent,

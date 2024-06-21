@@ -25,11 +25,14 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="relative flex flex-col items-center justify-center">
-            <NavBar />
+            {/* <NavBar /> */}
 
+            <div className="flex w-full max-w-6xl items-center justify-center pt-4">
+              <p className="text-2xl">{`<andreul />`}</p>
+            </div>
             <MobileNav />
 
-            <main className="flex min-h-screen max-w-7xl flex-col items-center justify-center pt-14">
+            <main className="flex min-h-screen max-w-7xl flex-col items-center justify-center">
               {children}
             </main>
             <Footer />
