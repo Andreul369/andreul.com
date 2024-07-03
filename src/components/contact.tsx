@@ -58,7 +58,7 @@ const Contact = () => {
 
   return (
     <>
-      <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/70 md:w-3/5">
+      <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-3/5">
         <CardHeader>
           <CardTitle>Contact</CardTitle>
         </CardHeader>
@@ -69,7 +69,7 @@ const Contact = () => {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="grid w-full space-y-8"
               >
-                <div className="flex justify-between gap-4">
+                <div className="flex flex-col justify-between gap-4 md:flex-row">
                   <FormField
                     control={form.control}
                     name="name"
@@ -130,7 +130,12 @@ const Contact = () => {
                   )}
                 />
 
-                <Button type="submit" disabled={isSubmitting}>
+                <Button
+                  type="submit"
+                  variant="ghost"
+                  disabled={isSubmitting}
+                  className="border md:ml-auto md:w-1/2"
+                >
                   {isSubmitting ? (
                     <>
                       <p>Sending...</p>
@@ -138,7 +143,7 @@ const Contact = () => {
                     </>
                   ) : (
                     <>
-                      <p>Send it</p>
+                      <p>Send</p>
                       <Icons.SendHorizontal className="ml-2 size-4" />
                     </>
                   )}

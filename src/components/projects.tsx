@@ -34,7 +34,7 @@ const Projects = () => {
               key={project.id}
               className="flex w-full flex-col gap-4 md:flex-row"
             >
-              <Card className="flex-col justify-between backdrop-blur supports-[backdrop-filter]:bg-background/70 md:w-1/2 md:flex-row">
+              <Card className="flex-col justify-between backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-1/2 md:flex-row">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>
@@ -69,10 +69,10 @@ const Projects = () => {
                 </CardFooter>
               </Card>
 
-              <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/70 md:w-1/2">
+              <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-1/2">
                 <CardContent className="relative h-96 rounded-lg md:h-full">
                   <Image
-                    src="/project-1.png"
+                    src={project.image}
                     alt="project1"
                     objectFit="cover"
                     fill

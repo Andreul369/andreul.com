@@ -23,7 +23,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={GeistSans.className}>
       <body className="min-h-screen antialiased">
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem> */}
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           <div className="relative flex flex-col items-center justify-center">
             {/* <NavBar /> */}
 
@@ -35,7 +36,7 @@ export default function RootLayout({
             <main className="flex min-h-screen max-w-7xl flex-col items-center justify-center">
               {children}
             </main>
-            <Footer />
+            {/* <Footer /> */}
           </div>
           <TailwindIndicator />
         </ThemeProvider>
