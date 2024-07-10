@@ -26,8 +26,13 @@ import { Textarea } from './ui/textarea';
 const ContactSchema = z.object({
   name: z.string({ required_error: 'Please enter your name' }).min(3),
   subject: z.string({ required_error: 'Please add a subject' }).min(3),
-  email: z.string().email({ message: 'Invalid email addresss' }),
-  message: z.string({ required_error: 'Message field cannot be empty' }),
+  email: z.string().min(1, { message: 'Email is required' }).email({
+    message: 'Must be a valid email',
+  }),
+  message: z
+    .string()
+    .min(10, { message: 'Message must be at least 10 characters' })
+    .max(1000, { message: 'Message must be less than 1000 characters' }),
 });
 
 const Contact = () => {
@@ -47,6 +52,7 @@ const Contact = () => {
 
     try {
       const { name, subject, email } = values;
+
       toast.success('Message sent. Thank you!');
     } catch (error) {
       console.error('Caught error:', error);
