@@ -49,19 +49,16 @@ const Contact = () => {
 
   // 2. Define a submit handler.
   async function onSubmit(values: z.infer<typeof ContactSchema>) {
-    setIsSubmitting(true);
-
     const token = await recaptchaRef.current?.executeAsync();
     const dataWithToken = { ...values, token };
     const result = await sendContactForm(dataWithToken as any);
 
     if (result.error) {
       toast.error(`${result.error}`);
-      setIsSubmitting(false);
     } else {
       toast.success('Message sent. Thank you!');
-      setIsSubmitting(false);
     }
+    form.reset();
   }
 
   return (
@@ -151,7 +148,7 @@ const Contact = () => {
                   disabled={isSubmitting}
                   className="border md:ml-auto md:w-1/2"
                 >
-                  {isSubmitting ? (
+                  {form.formState.isSubmitting ? (
                     <>
                       <p>Sending...</p>
                       <Icons.Spinner className="ml-2 size-4 animate-spin" />
