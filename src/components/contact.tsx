@@ -137,7 +137,14 @@ const Contact = () => {
                     </FormItem>
                   )}
                 />
-
+                <div>
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                    size="invisible"
+                    ref={recaptchaRef}
+                    hl="en"
+                  />
+                </div>
                 <Button
                   type="submit"
                   variant="ghost"
