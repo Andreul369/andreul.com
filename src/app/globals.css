@@ -65,8 +65,7 @@
   .container {
     @apply max-sm:px-4;
   }
-
-  .grecaptcha-badge {
-    visibility: hidden !important;
-  }
+}
+.grecaptcha-badge {
+  visibility: hidden !important;
 }
