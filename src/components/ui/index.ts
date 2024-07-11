@@ -74,3 +74,5 @@ export {
   SheetTitle,
   SheetDescription,
 } from './sheet';
+
+export { Toaster } from './sonner';

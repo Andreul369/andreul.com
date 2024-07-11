@@ -9,6 +9,7 @@ import MobileNav from '@/components/mobile-nav';
 import NavBar from '@/components/nav';
 import { TailwindIndicator } from '@/components/tailwind-indicator';
 import { ThemeProvider } from '@/components/theme-provider';
+import { Toaster } from '@/components/ui';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -40,6 +41,7 @@ export default function RootLayout({
           </div>
           <TailwindIndicator />
         </ThemeProvider>
+        <Toaster />
       </body>
     </html>
   );
