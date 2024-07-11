@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useRef, useState } from 'react';
-import { usePathname } from 'next/navigation';
+import React, { useRef } from 'react';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
@@ -38,8 +37,6 @@ const ContactSchema = z.object({
 });
 
 const Contact = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   // 1. Define your form.
   const form = useForm<z.infer<typeof ContactSchema>>({
