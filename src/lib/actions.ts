@@ -15,6 +15,7 @@ interface Data {
 
 export async function sendContactForm(data: Data) {
   const human = await validateHuman(data.token);
+
   if (!human) {
     return { error: "It's a bot! ❤️ ❌ 🤖" };
   }
