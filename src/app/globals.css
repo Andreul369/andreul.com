@@ -65,4 +65,8 @@
   .container {
     @apply max-sm:px-4;
   }
+
+  .grecaptcha-badge {
+    visibility: hidden !important;
+  }
 }
