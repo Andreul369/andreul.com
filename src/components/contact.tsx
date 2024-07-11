@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { zodResolver } from '@hookform/resolvers/zod';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import { toast } from 'sonner';
 import * as z from 'zod';
@@ -21,6 +22,7 @@ import {
   FormMessage,
   Input,
 } from '@/components/ui';
+import { sendContactForm } from '@/lib/actions';
 import { Textarea } from './ui/textarea';
 
 const ContactSchema = z.object({
@@ -38,8 +40,7 @@ const ContactSchema = z.object({
 const Contact = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  // const pathName = usePathname();
-
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   // 1. Define your form.
   const form = useForm<z.infer<typeof ContactSchema>>({
     resolver: zodResolver(ContactSchema),
@@ -50,14 +51,15 @@ const Contact = () => {
   async function onSubmit(values: z.infer<typeof ContactSchema>) {
     setIsSubmitting(true);
 
-    try {
-      const { name, subject, email } = values;
+    const token = await recaptchaRef.current?.executeAsync();
+    const dataWithToken = { ...values, token };
+    const result = await sendContactForm(dataWithToken as any);
 
+    if (result.error) {
+      toast.error(`${result.error}`);
+      setIsSubmitting(false);
+    } else {
       toast.success('Message sent. Thank you!');
-    } catch (error) {
-      console.error('Caught error:', error);
-      toast.error(`${error}`);
-    } finally {
       setIsSubmitting(false);
     }
   }

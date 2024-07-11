@@ -1,15 +1,15 @@
 'use server';
 
-import * as handlebars from 'handlebars';
+import Handlebars from 'handlebars';
 import nodemailer from 'nodemailer';
 
 import { contactTemplate } from '@/templates/contact';
 
 interface Data {
-  nameSurname: string;
+  name: string;
   email: string;
+  subject: string;
   message: string;
-  phone: string;
   token: string;
 }
 
@@ -34,9 +34,9 @@ export async function sendContactForm(data: Data) {
 
   try {
     const body = await compileWelcomeTemplate(
-      data.nameSurname,
+      data.name,
+      data.subject,
       data.email,
-      data.phone,
       data.message,
     );
 
@@ -44,7 +44,7 @@ export async function sendContactForm(data: Data) {
       from: `Website Contact Form ${process.env.CONTACT_FORM_SEND_EMAIL}`,
       replyTo: data.email,
       to: process.env.CONTACT_FORM_RECEIVE_EMAIL,
-      subject: `A contact form from - ${data.nameSurname}`,
+      subject: `A contact form from - ${data.name}`,
       html: body,
     });
 
@@ -68,16 +68,16 @@ async function validateHuman(token: string) {
 }
 
 export async function compileWelcomeTemplate(
-  nameSurname: string,
+  name: string,
+  subject: string,
   email: string,
-  phone: string,
   message: string,
 ) {
-  const template = handlebars.compile(contactTemplate);
+  const template = Handlebars.compile(contactTemplate);
   const htmlBody = template({
-    nameSurname,
+    name,
+    subject,
     email,
-    phone,
     message,
   });
   return htmlBody;
