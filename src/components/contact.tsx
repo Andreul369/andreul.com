@@ -44,7 +44,12 @@ const Contact = () => {
   // 1. Define your form.
   const form = useForm<z.infer<typeof ContactSchema>>({
     resolver: zodResolver(ContactSchema),
-    defaultValues: {},
+    defaultValues: {
+      name: '',
+      subject: '',
+      email: '',
+      message: '',
+    },
   });
 
   // 2. Define a submit handler.
