@@ -51,6 +51,8 @@ export { Input } from './input';
 
 export { Label } from './label';
 
+export { ScrollArea, ScrollBar } from './scrollarea';
+
 export {
   Select,
   SelectContent,

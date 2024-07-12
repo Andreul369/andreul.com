@@ -15,6 +15,7 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  ScrollArea,
 } from '@/components/ui';
 import { projects } from '@/db/projects';
 
@@ -50,9 +51,11 @@ const Projects = () => {
                 <CardContent>
                   {project.description}
                   <h1>Features:</h1>
-                  {project.features.map((feature) => (
-                    <p key={feature}>{feature}</p>
-                  ))}
+                  <ScrollArea className="h-[200px]">
+                    {project.features.map((feature) => (
+                      <p key={feature}>{feature}</p>
+                    ))}
+                  </ScrollArea>
                 </CardContent>
 
                 <CardFooter className="gap-2 self-end pt-6">
