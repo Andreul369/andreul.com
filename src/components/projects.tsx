@@ -34,7 +34,7 @@ const Projects = () => {
               key={project.id}
               className="flex w-full flex-col gap-4 md:flex-row"
             >
-              <Card className="flex-col justify-between backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-1/2 md:flex-row">
+              <Card className="flex flex-col justify-between backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-1/2">
                 <CardHeader>
                   <CardTitle>{project.title}</CardTitle>
                   <CardDescription>
@@ -49,7 +49,7 @@ const Projects = () => {
 
                 <CardContent>{project.description}</CardContent>
 
-                <CardFooter className="flex items-end justify-end gap-2 pt-6">
+                <CardFooter className="gap-2 self-end pt-6">
                   <Link
                     href="https://dev-flow-self.vercel.app"
                     target="_blank"
