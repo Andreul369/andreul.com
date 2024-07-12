@@ -74,7 +74,7 @@ const Contact = () => {
             <Form {...form}>
               <form
                 onSubmit={form.handleSubmit(onSubmit)}
-                className="grid w-full space-y-8"
+                className="grid w-full"
               >
                 <div className="flex flex-col justify-between gap-4 md:flex-row">
                   <FormField
@@ -110,7 +110,7 @@ const Contact = () => {
                   control={form.control}
                   name="subject"
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="pt-4">
                       <FormControl>
                         <Input placeholder="Subject" {...field} />
                       </FormControl>
@@ -124,7 +124,7 @@ const Contact = () => {
                   control={form.control}
                   name="message"
                   render={({ field }) => (
-                    <FormItem>
+                    <FormItem className="pt-4">
                       <FormControl>
                         <Textarea
                           placeholder="Write your message here..."
@@ -144,24 +144,27 @@ const Contact = () => {
                   hl="en"
                 />
 
-                <Button
-                  type="submit"
-                  variant="ghost"
-                  disabled={isSubmitting}
-                  className="border md:ml-auto md:w-1/2"
-                >
-                  {form.formState.isSubmitting ? (
-                    <>
-                      <p>Sending...</p>
-                      <Icons.Spinner className="ml-2 size-4 animate-spin" />
-                    </>
-                  ) : (
-                    <>
-                      <p>Send</p>
-                      <Icons.SendHorizontal className="ml-2 size-4" />
-                    </>
-                  )}
-                </Button>
+                <div className="mt-4 flex w-full justify-between gap-4">
+                  <div className="hidden w-1/2 border border-transparent md:block"></div>
+                  <Button
+                    type="submit"
+                    variant="ghost"
+                    disabled={form.formState.isSubmitting}
+                    className="w-full border md:w-1/2"
+                  >
+                    {form.formState.isSubmitting ? (
+                      <>
+                        <p>Sending...</p>
+                        <Icons.Spinner className="ml-2 size-4 animate-spin" />
+                      </>
+                    ) : (
+                      <>
+                        <p>Send</p>
+                        <Icons.SendHorizontal className="ml-2 size-4" />
+                      </>
+                    )}
+                  </Button>
+                </div>
               </form>
             </Form>
           </section>

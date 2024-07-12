@@ -68,5 +68,6 @@
 }
 .grecaptcha-badge {
   visibility: hidden !important;
-  /* margin-left: 0 !important; */
+  height: 1px !important;
+  position: static !important;
 }

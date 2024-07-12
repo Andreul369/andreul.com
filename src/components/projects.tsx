@@ -49,7 +49,7 @@ const Projects = () => {
 
                 <CardContent>{project.description}</CardContent>
 
-                <CardFooter className="flex justify-end gap-2 pt-6">
+                <CardFooter className="flex items-end justify-end gap-2 pt-6">
                   <Link
                     href="https://dev-flow-self.vercel.app"
                     target="_blank"
@@ -70,13 +70,12 @@ const Projects = () => {
               </Card>
 
               <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-1/2">
-                <CardContent className="relative h-96 rounded-lg md:h-full">
+                <CardContent className="relative aspect-video rounded-lg">
                   <Image
                     src={project.image}
                     alt="project1"
-                    objectFit="cover"
                     fill
-                    className="aspect-video rounded-md"
+                    className="rounded-md"
                   />
                 </CardContent>
               </Card>
