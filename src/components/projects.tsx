@@ -47,7 +47,13 @@ const Projects = () => {
                   </CardDescription>
                 </CardHeader>
 
-                <CardContent>{project.description}</CardContent>
+                <CardContent>
+                  {project.description}
+                  <h1>Features:</h1>
+                  {project.features.map((feature) => (
+                    <p key={feature}>{feature}</p>
+                  ))}
+                </CardContent>
 
                 <CardFooter className="gap-2 self-end pt-6">
                   <Link
