@@ -29,9 +29,9 @@ export default function RootLayout({
           <div className="relative flex flex-col items-center justify-center">
             {/* <NavBar /> */}
 
-            <div className="flex w-full max-w-6xl items-center justify-center pt-4">
+            {/* <div className="flex w-full max-w-6xl items-center justify-center pt-4">
               <p className="text-2xl">{`<andreul />`}</p>
-            </div>
+            </div> */}
             {/* <MobileNav /> */}
 
             <main className="flex min-h-screen max-w-7xl flex-col items-center justify-center">

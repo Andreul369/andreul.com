@@ -12,6 +12,7 @@ import {
   CardTitle,
   Carousel,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
@@ -49,16 +50,16 @@ const Projects = () => {
                 </CardHeader>
 
                 <CardContent>
-                  {project.description}
-                  <h1>Features:</h1>
-                  <ScrollArea className="h-[200px]">
+                  <ScrollArea className="h-[150px]">
+                    {project.description}
+                    <h1>Features:</h1>
                     {project.features.map((feature) => (
                       <p key={feature}>{feature}</p>
                     ))}
                   </ScrollArea>
                 </CardContent>
 
-                <CardFooter className="gap-2 self-end pt-6">
+                <CardFooter className="gap-2 self-end">
                   <Link
                     href="https://dev-flow-self.vercel.app"
                     target="_blank"
@@ -91,6 +92,7 @@ const Projects = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
+        {/* <CarouselDots /> */}
         {/* <CarouselPrevious /> */}
         {/* <CarouselNext /> */}
       </Carousel>

@@ -13,6 +13,7 @@ export {
   type CarouselApi,
   Carousel,
   CarouselContent,
+  CarouselDots,
   CarouselItem,
   CarouselPrevious,
   CarouselNext,

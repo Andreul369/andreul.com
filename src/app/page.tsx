@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex w-full flex-col gap-4 px-2 pt-4 md:flex-row">
         <Card className="w-full backdrop-blur-sm supports-[backdrop-filter]:bg-background/60">
           <CardHeader>
-            <CardTitle>Andrei Bojor</CardTitle>
+            <CardTitle>{`<andreul />`}</CardTitle>
           </CardHeader>
           <CardContent>
             I&apos;m a passionate web developer with experience in building
