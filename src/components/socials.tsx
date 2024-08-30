@@ -5,9 +5,9 @@ import * as Icons from '@/components/icons';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui';
 import { cn } from '@/utils/cn';
 
-const Socials = () => {
+const Socials = ({ className }: { className: string }) => {
   return (
-    <section id="socials">
+    <section className={cn(className)}>
       <Card className="backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <CardHeader>
           <CardTitle>Find me on</CardTitle>

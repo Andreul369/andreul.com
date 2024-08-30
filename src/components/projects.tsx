@@ -65,7 +65,7 @@ const Projects = () => {
                     target="_blank"
                     className="flex items-center rounded-sm border border-input bg-background px-4 py-2 hover:bg-accent hover:text-accent-foreground"
                   >
-                    <Icons.LaptopMinimal className="mr-2 size-4" />
+                    <Icons.DemoLogo className="mr-2 size-4" />
                     Demo
                   </Link>
                   <Link
@@ -81,12 +81,14 @@ const Projects = () => {
 
               <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-1/2">
                 <CardContent className="relative aspect-video rounded-lg">
-                  <Image
-                    src={project.image}
-                    alt="project1"
-                    fill
-                    className="rounded-md"
-                  />
+                  <div className="rounded-md p-6">
+                    <Image
+                      src={project.image}
+                      alt="project1"
+                      fill
+                      className="rounded-md"
+                    />
+                  </div>
                 </CardContent>
               </Card>
             </CarouselItem>

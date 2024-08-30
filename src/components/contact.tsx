@@ -22,6 +22,7 @@ import {
   Input,
 } from '@/components/ui';
 import { sendContactForm } from '@/lib/actions';
+import Socials from './socials';
 import { Textarea } from './ui/textarea';
 
 const ContactSchema = z.object({
@@ -64,8 +65,9 @@ const Contact = () => {
   }
 
   return (
-    <>
-      <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 md:w-3/5">
+    <section className="flex min-h-[80vh] w-full flex-col items-center justify-between sm:flex-row">
+      <Socials className="mx-auto self-center" />
+      <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:w-1/2">
         <CardHeader>
           <CardTitle>Contact</CardTitle>
         </CardHeader>
@@ -170,7 +172,7 @@ const Contact = () => {
           </section>
         </CardContent>
       </Card>
-    </>
+    </section>
   );
 };
 
