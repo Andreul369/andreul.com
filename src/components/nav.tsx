@@ -1,20 +1,25 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { navItems } from '@/app/config';
+import * as Icons from '@/components/icons';
 
 const NavBar = () => {
   return (
-    <div className="top-0 z-50 hidden w-full items-center justify-center gap-2 backdrop-blur supports-[backdrop-filter]:bg-background/60 md:flex">
-      <div className="flex w-full max-w-6xl items-center justify-between">
-        <p className="text-2xl">{`<andreul />`}</p>
-        <nav className="flex h-16 items-center gap-4">
-          {navItems.map((item, idx) => (
-            <Link href={item.href} key={`${item.href}-${idx}`}>
-              {item.title}
-            </Link>
-          ))}
-        </nav>
+    <div className="fixed top-0 z-50 flex h-16 w-full items-center justify-between gap-2 bg-transparent px-4 mix-blend-difference sm:flex-row md:px-16 xl:px-32">
+      <p className="text-2xl font-medium text-white">
+        {`<andreul`} <span className="text-red-600">/</span>
+        {`>`}
+      </p>
+      <div className="flex items-center justify-between gap-4">
+        <Link href="https://github.com/Andreul369" target="_blank">
+          <Icons.GitHub className="size-9" />
+        </Link>
+        <Link
+          href="https://www.linkedin.com/in/andrei-bojor-0207b1210/"
+          target="_blank"
+        >
+          <Icons.LinkedIn className="size-9" />
+        </Link>
       </div>
     </div>
   );

@@ -65,27 +65,74 @@ const Contact = () => {
   }
 
   return (
-    <section className="flex min-h-[80vh] w-full flex-col items-center justify-between sm:flex-row">
-      <Socials className="mx-auto self-center" />
-      <Card className="w-full backdrop-blur supports-[backdrop-filter]:bg-background/60 sm:w-1/2">
-        <CardHeader>
-          <CardTitle>Contact</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <section id="contact" className="w-full">
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="grid w-full"
-              >
-                <div className="flex flex-col justify-between gap-4 md:flex-row">
+    <section className="flex min-h-[80vh] w-full flex-col items-center justify-between bg-black px-4 sm:flex-row md:px-16 xl:px-32">
+      <div className="w-full sm:w-1/2">
+        <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-4/5">
+          Talk with our Sales team.
+        </h1>
+      </div>
+
+      <div className="my-10 hidden w-full grow sm:block sm:w-1/2">
+        <Card className="w-full rounded-none bg-transparent">
+          <CardHeader>
+            <CardTitle></CardTitle>
+          </CardHeader>
+          <CardContent>
+            <section id="contact" className="w-full">
+              <Form {...form}>
+                <form
+                  onSubmit={form.handleSubmit(onSubmit)}
+                  className="grid w-full"
+                >
+                  <div className="flex flex-col justify-between gap-4 md:flex-row">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem className="w-full">
+                          <FormControl>
+                            <Input
+                              placeholder="Name"
+                              {...field}
+                              className="h-16 rounded-none"
+                            />
+                          </FormControl>
+
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem className="w-full">
+                          <FormControl>
+                            <Input
+                              placeholder="Email"
+                              {...field}
+                              className="h-16 rounded-none"
+                            />
+                          </FormControl>
+
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
                   <FormField
                     control={form.control}
-                    name="name"
+                    name="subject"
                     render={({ field }) => (
-                      <FormItem className="w-full">
+                      <FormItem className="pt-4">
                         <FormControl>
-                          <Input placeholder="Name" {...field} />
+                          <Input
+                            placeholder="Subject"
+                            {...field}
+                            className="h-16 rounded-none"
+                          />
                         </FormControl>
 
                         <FormMessage />
@@ -95,83 +142,56 @@ const Contact = () => {
 
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="message"
                     render={({ field }) => (
-                      <FormItem className="w-full">
+                      <FormItem className="pt-4">
                         <FormControl>
-                          <Input placeholder="Email" {...field} />
+                          <Textarea
+                            placeholder="Write your message here..."
+                            {...field}
+                            className="rounded-none"
+                          />
                         </FormControl>
 
                         <FormMessage />
                       </FormItem>
                     )}
                   />
-                </div>
 
-                <FormField
-                  control={form.control}
-                  name="subject"
-                  render={({ field }) => (
-                    <FormItem className="pt-4">
-                      <FormControl>
-                        <Input placeholder="Subject" {...field} />
-                      </FormControl>
+                  <ReCAPTCHA
+                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
+                    size="invisible"
+                    ref={recaptchaRef}
+                    hl="en"
+                  />
 
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <FormField
-                  control={form.control}
-                  name="message"
-                  render={({ field }) => (
-                    <FormItem className="pt-4">
-                      <FormControl>
-                        <Textarea
-                          placeholder="Write your message here..."
-                          {...field}
-                        />
-                      </FormControl>
-
-                      <FormMessage />
-                    </FormItem>
-                  )}
-                />
-
-                <ReCAPTCHA
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                  size="invisible"
-                  ref={recaptchaRef}
-                  hl="en"
-                />
-
-                <div className="mt-4 flex w-full justify-between gap-4">
-                  <div className="hidden w-1/2 border border-transparent md:block"></div>
-                  <Button
-                    type="submit"
-                    variant="ghost"
-                    disabled={form.formState.isSubmitting}
-                    className="w-full border md:w-1/2"
-                  >
-                    {form.formState.isSubmitting ? (
-                      <>
-                        <p>Sending...</p>
-                        <Icons.Spinner className="ml-2 size-4 animate-spin" />
-                      </>
-                    ) : (
-                      <>
-                        <p>Send</p>
-                        <Icons.SendHorizontal className="ml-2 size-4" />
-                      </>
-                    )}
-                  </Button>
-                </div>
-              </form>
-            </Form>
-          </section>
-        </CardContent>
-      </Card>
+                  <div className="mt-4 flex w-full justify-between gap-4">
+                    <div className="hidden w-1/2 border border-transparent md:block"></div>
+                    <Button
+                      type="submit"
+                      variant="ghost"
+                      disabled={form.formState.isSubmitting}
+                      className="h-16 w-full rounded-none border md:w-1/2"
+                    >
+                      {form.formState.isSubmitting ? (
+                        <>
+                          <p>Sending...</p>
+                          <Icons.Spinner className="ml-2 size-4 animate-spin" />
+                        </>
+                      ) : (
+                        <>
+                          <p>Send</p>
+                          <Icons.SendHorizontal className="ml-2 size-4" />
+                        </>
+                      )}
+                    </Button>
+                  </div>
+                </form>
+              </Form>
+            </section>
+          </CardContent>
+        </Card>
+      </div>
     </section>
   );
 };

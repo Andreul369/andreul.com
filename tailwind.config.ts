@@ -17,6 +17,9 @@ const config: Config = {
       borderColor: {
         DEFAULT: 'hsl(var(--border) / <alpha-value>)',
       },
+      boxShadow: {
+        'all-sides-2xl': '0 0 50px -12px rgba(0, 0, 0, 0.25)',
+      },
       colors: {
         border: 'hsl(var(--border) / <alpha-value>)',
         input: 'hsl(var(--input) / <alpha-value>)',

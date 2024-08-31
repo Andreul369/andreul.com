@@ -6,7 +6,7 @@ import { Button } from './ui';
 
 const HomeBanner = () => {
   return (
-    <section className="relative flex min-h-[100vh] w-full flex-col items-center bg-gradient-to-b from-transparent from-0% via-transparent via-0% to-black to-100% px-4 sm:min-h-[80vh] sm:flex-row md:px-16 xl:px-32">
+    <section className="relative flex min-h-[100vh] w-full flex-col items-center bg-gradient-to-b from-transparent from-0% via-transparent via-0% to-black to-100%  px-4 py-16 sm:min-h-[80vh] sm:flex-row md:px-16 xl:px-32">
       <Image
         alt="background image"
         src="/philip-oroni-efqRsqQdyTg-unsplash.jpg"
@@ -14,7 +14,7 @@ const HomeBanner = () => {
         className="-z-50 object-cover "
       />
       <div className="w-full sm:w-1/2">
-        <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-3/4">
+        <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-4/5">
           Building apps and websites that bring ideas to life, driving
           innovation and results with every project.
         </h1>
@@ -26,8 +26,8 @@ const HomeBanner = () => {
         </Button>
       </div>
 
-      {/* ICONS Section */}
-      <div className="hidden w-full sm:block sm:w-1/2">
+      {/* DESKTOP ICONS GRID */}
+      <div className="my-10 hidden max-h-[600px] w-full grow sm:block sm:w-1/2">
         <div className="grid grid-cols-4 grid-rows-3">
           <div className="group relative col-start-3 flex flex-col items-center justify-center gap-2 border border-[#ffffff20]">
             <Icons.Nextjs className="size-16" />
@@ -71,7 +71,7 @@ const HomeBanner = () => {
         </div>
       </div>
 
-      {/* MOBILE GRID */}
+      {/* MOBILE ICONS GRID */}
       <div className="hidden w-full max-sm:block">
         <div className="grid grid-cols-3 grid-rows-3 ">
           <div className="group relative flex flex-col items-center justify-center gap-2 border border-[#ffffff20]">
