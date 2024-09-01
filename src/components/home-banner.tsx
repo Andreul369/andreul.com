@@ -6,12 +6,12 @@ import { Button } from './ui';
 
 const HomeBanner = () => {
   return (
-    <section className="relative flex min-h-[100vh] w-full flex-col items-center bg-gradient-to-b from-transparent from-0% via-transparent via-0% to-black to-100%  px-4 py-16 sm:min-h-[80vh] sm:flex-row md:px-16 xl:px-32">
+    <section className="relative flex min-h-[100vh] w-full flex-col items-center bg-gradient-to-b from-transparent from-0% via-transparent via-0% to-black to-100% px-4 py-16 sm:min-h-[80vh] sm:flex-row md:px-16 xl:px-32">
       <Image
         alt="background image"
         src="/philip-oroni-efqRsqQdyTg-unsplash.jpg"
         fill
-        className="-z-50 object-cover "
+        className="-z-10 object-cover"
       />
       <div className="w-full sm:w-1/2">
         <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-4/5">

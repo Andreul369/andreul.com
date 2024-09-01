@@ -26,8 +26,8 @@ export default function RootLayout({
       <body className="min-h-screen antialiased">
         {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem> */}
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div className="relative flex flex-col items-center justify-center bg-black">
-            <NavBar />
+          <div className="relative flex flex-col items-center justify-center">
+            {/* <NavBar /> */}
 
             {/* <div className="flex w-full max-w-6xl items-center justify-center pt-4">
               <p className="text-2xl">{`<andreul />`}</p>
