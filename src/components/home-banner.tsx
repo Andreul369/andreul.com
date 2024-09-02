@@ -6,7 +6,7 @@ import { Button } from './ui';
 
 const HomeBanner = () => {
   return (
-    <section className="relative flex min-h-[100vh] w-full flex-col items-center bg-gradient-to-b from-transparent from-0% via-transparent via-0% to-black to-100% px-4 py-16 sm:min-h-[80vh] sm:flex-row md:px-16 xl:px-32">
+    <section className="relative flex min-h-[100vh] w-full flex-col items-center justify-center bg-gradient-to-b from-transparent from-0% via-transparent via-0% to-black to-100% px-4 py-20 sm:flex-row sm:justify-normal md:px-16 xl:px-32">
       <Image
         alt="background image"
         src="/philip-oroni-efqRsqQdyTg-unsplash.jpg"
@@ -14,13 +14,12 @@ const HomeBanner = () => {
         className="-z-10 object-cover"
       />
       <div className="w-full sm:w-1/2">
-        <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-4/5">
-          Building apps and websites that bring ideas to life, driving
-          innovation and results with every project.
+        <h1 className="mb-6 w-full text-4xl font-medium tracking-tight 2xl:text-5xl">
+          Used in production by the most innovative companies on earth.
         </h1>
         <Button
           variant="outline"
-          className="h-16 w-full rounded-none bg-transparent font-medium sm:w-2/5"
+          className="mb-6 h-16 w-full rounded-none bg-transparent text-base font-medium sm:w-2/5"
         >
           Explore Projects
         </Button>

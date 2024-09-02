@@ -8,24 +8,26 @@ import { buttonVariants } from './ui';
 
 const Work = () => {
   return (
-    <section className="flex min-h-[100vh] w-full flex-col justify-between bg-white sm:flex-row">
-      <div className="flex w-full max-w-[600px] flex-col self-center pl-4 sm:w-1/2 md:pl-16 xl:ml-32">
-        <h1 className="mb-8 text-4xl font-medium tracking-tight text-black">
-          Developer Q&A Platform: Ask, Search, and earn Points & Medals based on
-          your Activity
+    <section className="flex min-h-[100vh] w-full flex-col-reverse justify-between bg-white  sm:flex-row">
+      <div className="flex w-full flex-col self-center px-4 sm:w-1/2 xl:px-32">
+        <h1 className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
+          Developer Q&A Platform
+        </h1>
+        <h1 className="mb-8 text-2xl font-medium tracking-tight text-black sm:text-4xl">
+          Ask, Search, and earn Points & Medals based on your Activity
         </h1>
         <div className="mb-8 flex items-center gap-8">
           <Icons.DevOverflow className="size-20" />
           <h1 className="text-2xl font-medium text-black">Dev Overflow</h1>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex flex-col items-center gap-2 sm:flex-row">
           <Link
             href="https://dev-flow-self.vercel.app"
             target="_blank"
             className={cn(
               buttonVariants({ variant: 'outline' }),
-              'h-16 w-full rounded-none bg-transparent font-medium text-black',
+              'h-16 w-full rounded-none bg-transparent text-base font-medium text-black',
             )}
           >
             <Icons.DemoLogo className="mr-2 size-4" />
@@ -36,7 +38,7 @@ const Work = () => {
             target="_blank"
             className={cn(
               buttonVariants({ variant: 'outline' }),
-              'h-16 w-full rounded-none bg-transparent font-medium text-black',
+              'h-16 w-full rounded-none bg-transparent text-base font-medium text-black',
             )}
           >
             <Icons.GitHub className="mr-2 size-4" />
@@ -45,21 +47,20 @@ const Work = () => {
         </div>
       </div>
 
-      {/* ICONS Section */}
-      <div className="relative w-full overflow-hidden max-sm:flex-grow sm:w-1/2">
+      <div className="relative w-full grow overflow-x-clip sm:w-1/2">
         <Image
           alt="portfolio project preview"
           src="/devoverflow-light-1.png"
           width={1920}
           height={1080}
-          className="shadow-all-sides-2xl absolute left-14 top-10 z-30 rounded-sm object-cover"
+          className="absolute left-[22%] top-[45%] z-30 -translate-y-1/2 scale-125 transform rounded-sm object-cover shadow-all-sides-2xl"
         />
         <Image
           alt="portfolio project preview"
           src="/devoverflow-dark-2.png"
           width={1920}
           height={1080}
-          className="absolute left-[15%] top-[22%] z-40 rounded-sm object-cover shadow-2xl"
+          className="absolute left-[35%] top-[60%] z-40 -translate-y-1/2 scale-125 transform rounded-sm object-cover shadow-2xl"
         />
       </div>
     </section>

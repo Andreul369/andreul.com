@@ -27,7 +27,7 @@ export default function RootLayout({
         {/* <ThemeProvider attribute="class" defaultTheme="dark" enableSystem> */}
         <ThemeProvider attribute="class" defaultTheme="dark">
           <div className="relative flex flex-col items-center justify-center">
-            {/* <NavBar /> */}
+            <NavBar />
 
             {/* <div className="flex w-full max-w-6xl items-center justify-center pt-4">
               <p className="text-2xl">{`<andreul />`}</p>
@@ -37,7 +37,7 @@ export default function RootLayout({
             <main className="flex min-h-screen w-full flex-col items-center">
               {children}
             </main>
-            <Footer />
+            {/* <Footer /> */}
           </div>
           <TailwindIndicator />
         </ThemeProvider>

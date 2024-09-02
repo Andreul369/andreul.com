@@ -1,6 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
+import { TextHoverEffect } from './text-hover-effect';
 import { Button } from './ui';
 
 const ThemeToggle = dynamic(() => import('@/components/theme-toggle'), {
@@ -21,8 +22,8 @@ const ThemeToggle = dynamic(() => import('@/components/theme-toggle'), {
 
 const Footer = () => {
   return (
-    <footer className="flex h-16 w-full max-w-6xl items-center justify-between border-t">
-      <h1>Built with ♥ by andreul.com</h1>
+    <footer className="flex w-full max-w-7xl items-center justify-between border-t">
+      {/* <h1>Built with ♥ by andreul.com</h1> */}
       {/* <ThemeToggle /> */}
     </footer>
   );

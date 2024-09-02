@@ -23,6 +23,7 @@ import {
 } from '@/components/ui';
 import { sendContactForm } from '@/lib/actions';
 import Socials from './socials';
+import { TextHoverEffect } from './text-hover-effect';
 import { Textarea } from './ui/textarea';
 
 const ContactSchema = z.object({
@@ -65,14 +66,14 @@ const Contact = () => {
   }
 
   return (
-    <section className="flex min-h-[80vh] w-full flex-col items-center justify-between bg-black px-4 sm:flex-row md:px-16 xl:px-32">
-      <div className="w-full sm:w-1/2">
+    <section className="relative flex min-h-[100vh] w-full flex-col items-center justify-center px-4 sm:flex-row md:px-16 xl:px-32">
+      <div className="w-full text-center sm:w-1/2">
         <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-4/5">
-          Talk with our Sales team.
+          Speak your mind.
         </h1>
       </div>
 
-      <div className="my-10 hidden w-full grow sm:block sm:w-1/2">
+      <div className="my-10 w-full sm:w-1/2">
         <Card className="w-full rounded-none bg-transparent">
           <CardHeader>
             <CardTitle></CardTitle>
@@ -84,7 +85,7 @@ const Contact = () => {
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="grid w-full"
                 >
-                  <div className="flex flex-col justify-between gap-4 md:flex-row">
+                  <div className="flex flex-col justify-between gap-4 text-base md:flex-row">
                     <FormField
                       control={form.control}
                       name="name"
@@ -175,12 +176,12 @@ const Contact = () => {
                     >
                       {form.formState.isSubmitting ? (
                         <>
-                          <p>Sending...</p>
+                          <p className="text-base">Sending...</p>
                           <Icons.Spinner className="ml-2 size-4 animate-spin" />
                         </>
                       ) : (
                         <>
-                          <p>Send</p>
+                          <p className="text-base">Send</p>
                           <Icons.SendHorizontal className="ml-2 size-4" />
                         </>
                       )}
@@ -192,6 +193,7 @@ const Contact = () => {
           </CardContent>
         </Card>
       </div>
+      <TextHoverEffect text="andreul" />
     </section>
   );
 };
