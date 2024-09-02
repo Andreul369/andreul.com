@@ -8,7 +8,7 @@ import { buttonVariants } from './ui';
 
 const Work = () => {
   return (
-    <section className="flex min-h-[100vh] w-full flex-col-reverse justify-between bg-white  sm:flex-row">
+    <section className="flex min-h-[100vh] w-full flex-col-reverse justify-between bg-white md:flex-row">
       <div className="flex w-full flex-col self-center px-4 sm:w-1/2 xl:px-32">
         <h1 className="text-2xl font-medium tracking-tight text-black sm:text-4xl">
           Developer Q&A Platform
@@ -21,7 +21,7 @@ const Work = () => {
           <h1 className="text-2xl font-medium text-black">Dev Overflow</h1>
         </div>
 
-        <div className="flex flex-col items-center gap-2 sm:flex-row">
+        <div className="flex flex-col items-center gap-2 md:flex-row">
           <Link
             href="https://dev-flow-self.vercel.app"
             target="_blank"
@@ -47,7 +47,7 @@ const Work = () => {
         </div>
       </div>
 
-      <div className="relative w-full grow overflow-x-clip sm:w-1/2">
+      <div className="relative w-full grow overflow-x-clip md:w-1/2">
         <Image
           alt="portfolio project preview"
           src="/devoverflow-light-1.png"
