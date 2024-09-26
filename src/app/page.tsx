@@ -2,7 +2,7 @@ import Contact from '@/components/contact';
 import HomeBanner from '@/components/home-banner';
 import Work from '@/components/work';
 
-export default function Home() {
+export default function HomePage() {
   return (
     <>
       <HomeBanner />

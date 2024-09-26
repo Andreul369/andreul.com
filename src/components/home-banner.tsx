@@ -1,8 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 import * as Icons from '@/components/icons';
-import { Button } from './ui';
+import { cn } from '@/utils/cn';
+import { Button, buttonVariants } from './ui';
 
 const HomeBanner = () => {
   return (
@@ -14,100 +16,114 @@ const HomeBanner = () => {
         className="-z-10 object-cover"
       />
       <div className="w-full sm:w-1/2">
-        <h1 className="mb-6 w-full text-4xl font-medium tracking-tight 2xl:text-5xl">
-          Used in production by the most innovative companies on earth.
+        <h1 className="w-full text-3xl font-medium tracking-tight md:text-4xl 2xl:text-5xl">
+          Let&apos;s bring ideas to life.
         </h1>
-        <Button
-          variant="outline"
-          className="mb-6 h-16 w-full rounded-none bg-transparent text-base font-medium sm:w-2/5"
+        <h1 className="mb-6 w-full text-xl font-medium tracking-tight 2xl:text-2xl">
+          Building fast, scalable web apps with modern technologies.
+        </h1>
+        <Link
+          href="#work"
+          className={cn(
+            buttonVariants({ variant: 'outline' }),
+            'mb-6 h-16 w-full rounded-none bg-transparent text-base font-medium sm:w-2/5',
+          )}
         >
           Explore Projects
-        </Button>
+        </Link>
       </div>
 
-      {/* DESKTOP ICONS GRID */}
-      <div className="my-10 hidden max-h-[600px] w-full grow sm:block sm:w-1/2">
-        <div className="grid grid-cols-4 grid-rows-3">
-          <div className="group relative col-start-3 flex flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+      <div className="hidden w-full flex-col sm:flex sm:w-1/2">
+        <div className="flex">
+          <div className="invisible size-32"></div>
+          <div className="invisible size-32"></div>
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Nextjs className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Next.JS</h3>
           </div>
-
-          <div className="group relative col-start-4 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.React className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">React</h3>
           </div>
-          <div className="group relative col-start-2 row-start-2 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+        </div>
+        <div className="flex">
+          <div className="invisible size-32"></div>
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Tailwind className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Tailwind</h3>
           </div>
-          <div className="group relative col-start-3 row-start-2 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.PayloadCms className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Payload</h3>
           </div>
-          <div className="group relative col-start-4 row-start-2 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Drizzle className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">drizzle</h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+        </div>
+        <div className="flex">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Supabase className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Supabase</h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.ClerkHead className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Clerk</h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Postgresql className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">
               PostgreSQL
             </h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.MongoDb className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">MongoDB</h3>
           </div>
         </div>
       </div>
 
-      {/* MOBILE ICONS GRID */}
       <div className="hidden w-full max-sm:block">
-        <div className="grid grid-cols-3 grid-rows-3 ">
-          <div className="group relative flex flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+        <div className="flex">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Nextjs className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Next.JS</h3>
           </div>
-          <div className="group relative flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.React className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">React</h3>
           </div>
-          <div className="group relative flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Tailwind className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Tailwind</h3>
           </div>
-          <div className="group relative row-start-2 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+        </div>
+        <div className="flex">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.PayloadCms className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Payload</h3>
           </div>
-          <div className="group relative row-start-2 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Drizzle className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">drizzle</h3>
           </div>
-          <div className="group relative row-start-2 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Supabase className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Supabase</h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+        </div>
+        <div className="flex">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.ClerkHead className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Clerk</h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Postgresql className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">
               PostgreSQL
             </h3>
           </div>
-          <div className="group relative row-start-3 flex aspect-square flex-col items-center justify-center gap-2 border border-[#ffffff20]">
+          <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.MongoDb className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">MongoDB</h3>
           </div>

@@ -115,7 +115,7 @@ export const TextHoverEffect = ({
           {text}
         </motion.text>
 
-        {/* asta are hover effectul, lumineaza literele cu culoare */}
+        {/* The hover effect, gradient colors */}
         <text
           x="50%"
           y="100%"

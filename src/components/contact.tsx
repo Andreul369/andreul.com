@@ -74,11 +74,8 @@ const Contact = () => {
       </div>
 
       <div className="my-10 w-full sm:w-1/2">
-        <Card className="w-full rounded-none bg-transparent">
-          <CardHeader>
-            <CardTitle></CardTitle>
-          </CardHeader>
-          <CardContent>
+        <Card className="w-full rounded-none bg-background">
+          <CardContent className="pt-6">
             <section id="contact" className="w-full">
               <Form {...form}>
                 <form
