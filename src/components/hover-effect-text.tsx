@@ -3,9 +3,12 @@
 import React, { useEffect, useRef, useState } from 'react';
 
 // Custom throttle function
-const throttle = (func, limit) => {
-  let lastRan;
-  return function (...args) {
+const throttle = <T extends (...args: any[]) => any>(
+  func: T,
+  limit: number,
+) => {
+  let lastRan: number | undefined;
+  return function (...args: Parameters<T>) {
     const now = Date.now();
     if (!lastRan || now - lastRan >= limit) {
       func(...args);
@@ -15,23 +18,26 @@ const throttle = (func, limit) => {
 };
 
 const HoverEffectText = () => {
-  const containerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const container = containerRef.current;
 
-    const onMouseMove = (event) => {
-      const { clientX, clientY } = event;
-      const rect = container.getBoundingClientRect();
-      const x = clientX - rect.left;
-      const y = clientY - rect.top;
+    const onMouseMove = (event: MouseEvent) => {
+      if (container) {
+        // Ensure container is not null
+        const { clientX, clientY } = event;
+        const rect = container.getBoundingClientRect();
+        const x = clientX - rect.left;
+        const y = clientY - rect.top;
 
-      setMouse({ x, y });
+        setMouse({ x, y });
 
-      // Update CSS variables for the flashlight effect
-      container.style.setProperty('--mouse-x', `${x}px`);
-      container.style.setProperty('--mouse-y', `${y}px`);
+        // Update CSS variables for the flashlight effect
+        container.style.setProperty('--mouse-x', `${x}px`);
+        container.style.setProperty('--mouse-y', `${y}px`);
+      }
     };
 
     const throttledMouseMove = throttle(onMouseMove, 10);
