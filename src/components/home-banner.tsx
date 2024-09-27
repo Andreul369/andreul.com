@@ -85,7 +85,7 @@ const HomeBanner = () => {
 
       {/* MOBILE ICONS */}
       <div className="block w-full lg:hidden">
-        <div className="flex">
+        <div className="flex w-full">
           <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.Nextjs className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Next.JS</h3>
@@ -99,7 +99,7 @@ const HomeBanner = () => {
             <h3 className="hidden font-semibold group-hover:block">Tailwind</h3>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex w-full">
           <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.PayloadCms className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Payload</h3>
@@ -113,7 +113,7 @@ const HomeBanner = () => {
             <h3 className="hidden font-semibold group-hover:block">Supabase</h3>
           </div>
         </div>
-        <div className="flex">
+        <div className="flex w-full">
           <div className="group flex size-32 flex-col items-center justify-center border border-[#FFFFFF20]">
             <Icons.ClerkHead className="size-16" />
             <h3 className="hidden font-semibold group-hover:block">Clerk</h3>
