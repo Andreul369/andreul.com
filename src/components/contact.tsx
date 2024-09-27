@@ -22,6 +22,7 @@ import {
   Input,
 } from '@/components/ui';
 import { sendContactForm } from '@/lib/actions';
+import HoverEffectText from './hover-effect-text';
 import Socials from './socials';
 import { TextHoverEffect } from './text-hover-effect';
 import { Textarea } from './ui/textarea';
@@ -66,14 +67,14 @@ const Contact = () => {
   }
 
   return (
-    <section className="relative flex min-h-[100vh] w-full flex-col items-center justify-center px-4 sm:flex-row md:px-16 xl:px-32">
-      <div className="w-full text-center sm:w-1/2">
-        <h1 className="mb-6 w-full text-5xl font-medium tracking-tight sm:w-4/5">
+    <section className="relative flex min-h-[100vh] w-full flex-col items-center justify-center px-4 md:px-16 lg:flex-row xl:px-32">
+      <div className="w-full text-center lg:w-1/2">
+        <h1 className="mb-6 w-full text-5xl font-medium tracking-tight">
           Speak your mind.
         </h1>
       </div>
 
-      <div className="my-10 w-full sm:w-1/2">
+      <div className="my-10 w-full lg:w-1/2">
         <Card className="w-full rounded-none bg-background">
           <CardContent className="pt-6">
             <section id="contact" className="w-full">
@@ -190,7 +191,7 @@ const Contact = () => {
           </CardContent>
         </Card>
       </div>
-      <TextHoverEffect text="andreul" />
+      {/* <TextHoverEffect text="andreul" /> */}
     </section>
   );
 };

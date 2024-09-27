@@ -1,5 +1,6 @@
 import Contact from '@/components/contact';
 import HomeBanner from '@/components/home-banner';
+import HoverEffectText from '@/components/hover-effect-text';
 import Work from '@/components/work';
 
 export default function HomePage() {
@@ -8,6 +9,7 @@ export default function HomePage() {
       <HomeBanner />
       <Work />
       <Contact />
+      <HoverEffectText />
     </>
   );
 }

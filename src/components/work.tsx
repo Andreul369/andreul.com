@@ -24,7 +24,7 @@ const Work = () => {
           <h1 className="text-2xl font-medium text-black">Dev Overflow</h1>
         </div>
 
-        <div className="mb-8 flex flex-col items-center gap-2 md:flex-row">
+        <div className="mb-8 flex flex-col items-center gap-2 lg:flex-row">
           <Link
             href="https://dev-flow-self.vercel.app"
             target="_blank"
