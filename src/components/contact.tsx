@@ -12,8 +12,6 @@ import {
   Button,
   Card,
   CardContent,
-  CardHeader,
-  CardTitle,
   Form,
   FormControl,
   FormField,
@@ -22,9 +20,6 @@ import {
   Input,
 } from '@/components/ui';
 import { sendContactForm } from '@/lib/actions';
-import HoverEffectText from './hover-effect-text';
-import Socials from './socials';
-import { TextHoverEffect } from './text-hover-effect';
 import { Textarea } from './ui/textarea';
 
 const ContactSchema = z.object({
@@ -191,7 +186,6 @@ const Contact = () => {
           </CardContent>
         </Card>
       </div>
-      {/* <TextHoverEffect text="andreul" /> */}
     </section>
   );
 };
