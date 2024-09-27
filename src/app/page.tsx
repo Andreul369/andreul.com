@@ -9,7 +9,7 @@ export default function HomePage() {
       <HomeBanner />
       <Work />
       <Contact />
-      <HoverEffectText />
+      {/* <HoverEffectText /> */}
     </>
   );
 }
