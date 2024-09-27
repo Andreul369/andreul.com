@@ -1,7 +1,6 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
 
-import { TextHoverEffect } from './text-hover-effect';
 import { Button } from './ui';
 
 const ThemeToggle = dynamic(() => import('@/components/theme-toggle'), {
